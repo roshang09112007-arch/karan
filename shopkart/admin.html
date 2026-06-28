@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel — ShopKart</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <a href="index.html" class="brand">Shop<span>Kart</span> <span style="font-size:0.7rem; font-weight:600; color:#9fb0d8;">ADMIN</span></a>
+    <nav class="admin-nav">
+      <a href="#" data-tab="dashboard" class="active">📊 Dashboard</a>
+      <a href="#" data-tab="products">📦 Products</a>
+      <a href="#" data-tab="orders">🧾 Orders</a>
+      <a href="#" data-tab="users">👤 Users</a>
+      <a href="#" id="adminLogout">🚪 Logout</a>
+    </nav>
+  </aside>
+
+  <main class="admin-main">
+    <p class="muted" style="margin-bottom: 10px;">Signed in as <strong id="adminUserName"></strong></p>
+
+    <div class="admin-tab-panel" id="tab-dashboard"></div>
+    <div class="admin-tab-panel hidden" id="tab-products"></div>
+    <div class="admin-tab-panel hidden" id="tab-orders"></div>
+    <div class="admin-tab-panel hidden" id="tab-users"></div>
+  </main>
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

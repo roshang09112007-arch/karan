@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product — ShopKart</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main class="container" id="pdpRoot">
+  <!-- filled by product.js -->
+</main>
+
+<section class="container reviews-section">
+  <h2>Ratings &amp; Reviews</h2>
+  <div class="review-summary">
+    <div class="review-score">
+      <div class="big" id="reviewSummaryScore">0.0</div>
+      <div id="reviewSummaryStars" style="color:var(--accent-dark);"></div>
+      <div class="muted" id="reviewSummaryCount" style="font-size:0.8rem;"></div>
+    </div>
+    <p class="muted">Real feedback from verified ShopKart shoppers.</p>
+  </div>
+  <div id="reviewsList"></div>
+
+  <div class="review-form">
+    <h3 style="margin-top:0;">Write a review</h3>
+    <form id="reviewForm">
+      <div class="star-input" id="starInput"></div>
+      <textarea id="reviewText" rows="3" placeholder="Share details of your experience with this product" style="width:100%; padding:10px; border:1px solid var(--border-strong); border-radius:5px;" required></textarea>
+      <button type="submit" class="btn btn-primary" style="margin-top:10px;">Submit Review</button>
+    </form>
+  </div>
+</section>
+
+<section class="container" style="padding-bottom: 50px;">
+  <div class="section-title"><h2>You may also like</h2></div>
+  <div class="product-grid" id="relatedProducts"></div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>

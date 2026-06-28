@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Confirmed — ShopKart</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main class="container text-center" style="padding: 60px 20px;">
+  <div style="font-size: 3rem;">✅</div>
+  <h1>Your order is confirmed!</h1>
+  <p class="muted" id="confirmText">Thank you for shopping with ShopKart.</p>
+  <div class="flex gap-8" style="justify-content:center; margin-top: 20px;">
+    <a href="account.html" class="btn btn-primary">Track Order</a>
+    <a href="home.html" class="btn btn-outline">Continue Shopping</a>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderHeader();
+    const orderId = sessionStorage.getItem("sk_last_order");
+    if (orderId) {
+      document.getElementById("confirmText").textContent = `Order ${orderId} has been placed and is being prepared for shipment.`;
+    }
+  });
+</script>
+</body>
+</html>

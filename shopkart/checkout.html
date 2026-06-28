@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — ShopKart</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main class="container checkout-layout">
+  <div>
+    <div class="checkout-step">
+      <h2><span class="step-num">1</span> Delivery Address</h2>
+      <div id="addressList"></div>
+      <button class="btn btn-ghost" id="toggleAddAddress" type="button">+ Add a new address</button>
+      <form id="addAddressForm" class="hidden" style="margin-top:14px;">
+        <div class="field"><label>Label (e.g. Home, Work)</label><input id="addrLabel" placeholder="Home"></div>
+        <div class="field"><label>Address line</label><input id="addrLine1" required></div>
+        <div class="field-row">
+          <div class="field"><label>City</label><input id="addrCity" required></div>
+          <div class="field"><label>State</label><input id="addrState" required></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>PIN code</label><input id="addrPin" maxlength="6" required></div>
+          <div class="field"><label>Phone</label><input id="addrPhone" maxlength="10" required></div>
+        </div>
+        <button class="btn btn-primary" type="submit">Save Address</button>
+      </form>
+    </div>
+
+    <div class="checkout-step">
+      <h2><span class="step-num">2</span> Payment Method</h2>
+      <div class="pay-options" id="payOptions"></div>
+
+      <div class="card-fields" id="cardFields">
+        <div class="field"><label>Card Number</label><input id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19"></div>
+        <div class="field-row">
+          <div class="field"><label>Expiry (MM/YY)</label><input id="cardExpiry" placeholder="08/28" maxlength="5"></div>
+          <div class="field"><label>CVV</label><input id="cardCvv" placeholder="123" maxlength="3"></div>
+        </div>
+        <p class="muted" style="font-size:0.78rem;">🔒 This is a demo checkout — no real payment is processed and no card data is transmitted anywhere.</p>
+      </div>
+      <div class="card-fields" id="upiFields">
+        <div class="field"><label>UPI ID</label><input id="upiId" placeholder="yourname@bank"></div>
+        <p class="muted" style="font-size:0.78rem;">🔒 Demo checkout — no real UPI request is sent.</p>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div id="checkoutSummary"></div>
+    <button class="btn btn-primary btn-block" id="placeOrderBtn" style="margin-top:14px; padding:14px;">Place Order</button>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

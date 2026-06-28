@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopKart — Shop Electronics, Fashion, Home &amp; More</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<!-- Hero + category browsing, shown when there's no active search/filter -->
+<section class="hero" id="heroSection">
+  <div class="container">
+    <div>
+      <h1>Big brands.<br>Bigger savings.</h1>
+      <p>Discover deals across electronics, fashion, home essentials and more — handpicked for you every day.</p>
+      <div class="hero-actions">
+        <a href="home.html?deals=1" class="btn btn-primary">Shop Today's Deals</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="assets/hero-shopping-bags.png" alt="Shopping bags ready for delivery">
+    </div>
+  </div>
+</section>
+
+<section class="container" id="categorySection">
+  <div class="section-title"><h2>Shop by category</h2></div>
+  <div class="category-grid" id="categoryGrid"></div>
+</section>
+
+<section class="container" id="homeFeatured"></section>
+
+<!-- Full catalogue with filters, shown when searching or a category/deals filter is active -->
+<section class="container shop-layout hidden" id="shopLayout">
+  <aside class="filters">
+    <h3>Filters</h3>
+    <div class="filter-group">
+      <legend>Category</legend>
+      <select id="catFilterSelect" style="width:100%; padding:8px; border:1px solid var(--border-strong); border-radius:5px;"></select>
+    </div>
+    <div class="filter-group">
+      <legend>Max Price: <span id="priceRangeLabel">₹60,000</span></legend>
+      <input type="range" id="priceRange" min="500" max="60000" step="500" value="60000">
+    </div>
+    <div class="filter-group">
+      <legend>Customer Rating</legend>
+      <label class="filter-option"><input type="checkbox" class="ratingCheckbox" value="4"> 4★ &amp; above</label>
+      <label class="filter-option"><input type="checkbox" class="ratingCheckbox" value="3"> 3★ &amp; above</label>
+    </div>
+    <div class="filter-group">
+      <legend>Brand</legend>
+      <div id="brandFilterGroup"></div>
+    </div>
+    <button class="btn btn-outline btn-block" id="clearFiltersBtn">Clear all filters</button>
+  </aside>
+
+  <div>
+    <div class="results-bar">
+      <span id="resultsCount" class="muted"></span>
+      <select id="sortSelect">
+        <option value="relevance">Sort: Relevance</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="rating">Customer Rating</option>
+        <option value="discount">Discount</option>
+      </select>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
